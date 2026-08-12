@@ -1,0 +1,122 @@
+[
+  {
+    "query_id": "q01",
+    "question": "What is the main vector database used in this cost-efficient RAG system?",
+    "gold_doc_id": "rag_architecture",
+    "gold_chunk_ids": ["rag_architecture_chunk_0"],
+    "gold_answer": "LanceDB is used as the primary embedded, disk-backed vector database.",
+    "category": "architecture"
+  },
+  {
+    "query_id": "q02",
+    "question": "Why does a fully managed vector database become a top infrastructure cost?",
+    "gold_doc_id": "rag_architecture",
+    "gold_chunk_ids": ["rag_architecture_chunk_1"],
+    "gold_answer": "Because managed vector DBs charge for always-on pods and memory allocation regardless of query frequency.",
+    "category": "cost"
+  },
+  {
+    "query_id": "q03",
+    "question": "How is document re-ingestion made idempotent?",
+    "gold_doc_id": "ingestion_spec",
+    "gold_chunk_ids": ["ingestion_spec_chunk_0"],
+    "gold_answer": "By computing a SHA-256 hash derived from the source file path and chunk content to detect duplicate vectors.",
+    "category": "ingestion"
+  },
+  {
+    "query_id": "q04",
+    "question": "What happens when no relevant context chunks are found for a question?",
+    "gold_doc_id": "grounding_spec",
+    "gold_chunk_ids": ["grounding_spec_chunk_0"],
+    "gold_answer": "The system cleanly states that no relevant context was found without hallucinating.",
+    "category": "generation"
+  },
+  {
+    "query_id": "q05",
+    "question": "Which embedding model is used for vectorizing text chunks?",
+    "gold_doc_id": "rag_architecture",
+    "gold_chunk_ids": ["rag_architecture_chunk_2"],
+    "gold_answer": "OpenAI text-embedding-3-small with 1536 dimensions.",
+    "category": "embeddings"
+  },
+  {
+    "query_id": "q06",
+    "question": "What parameters control text chunking in the pipeline?",
+    "gold_doc_id": "ingestion_spec",
+    "gold_chunk_ids": ["ingestion_spec_chunk_1"],
+    "gold_answer": "Chunk size (default 500 characters) and chunk overlap (default 50 characters).",
+    "category": "ingestion"
+  },
+  {
+    "query_id": "q07",
+    "question": "What secondary vector database is benchmarked alongside LanceDB?",
+    "gold_doc_id": "rag_architecture",
+    "gold_chunk_ids": ["rag_architecture_chunk_3"],
+    "gold_answer": "ChromaDB is benchmarked as a secondary local vector store.",
+    "category": "architecture"
+  },
+  {
+    "query_id": "q08",
+    "question": "What metrics are used for evaluating retrieval quality?",
+    "gold_doc_id": "eval_metrics",
+    "gold_chunk_ids": ["eval_metrics_chunk_0"],
+    "gold_answer": "Recall@k (Hit Rate), MRR, nDCG@k, and Context Precision.",
+    "category": "evaluation"
+  },
+  {
+    "query_id": "q09",
+    "question": "How are answer faithfulness and groundedness measured?",
+    "gold_doc_id": "eval_metrics",
+    "gold_chunk_ids": ["eval_metrics_chunk_1"],
+    "gold_answer": "Through LLM-as-a-judge scoring and citation mapping verification.",
+    "category": "evaluation"
+  },
+  {
+    "query_id": "q10",
+    "question": "What telemetry metrics are logged per query?",
+    "gold_doc_id": "telemetry_spec",
+    "gold_chunk_ids": ["telemetry_spec_chunk_0"],
+    "gold_answer": "Retrieval latency, generation latency, total latency, chunk count, and token usage.",
+    "category": "telemetry"
+  },
+  {
+    "query_id": "q11",
+    "question": "How does LanceDB reduce infrastructure storage cost?",
+    "gold_doc_id": "cost_analysis_doc",
+    "gold_chunk_ids": ["cost_analysis_doc_chunk_0"],
+    "gold_answer": "LanceDB uses disk-backed zero-copy storage on local EBS or S3 without requiring always-on RAM pods.",
+    "category": "cost"
+  },
+  {
+    "query_id": "q12",
+    "question": "What file formats are supported for document ingestion?",
+    "gold_doc_id": "ingestion_spec",
+    "gold_chunk_ids": ["ingestion_spec_chunk_2"],
+    "gold_answer": "PDF, HTML, and Markdown (.md) documents.",
+    "category": "ingestion"
+  },
+  {
+    "query_id": "q13",
+    "question": "What API endpoints does the FastAPI web service expose?",
+    "gold_doc_id": "api_spec",
+    "gold_chunk_ids": ["api_spec_chunk_0"],
+    "gold_answer": "GET /health, GET /metrics, POST /query, and POST /ingest.",
+    "category": "api"
+  },
+  {
+    "query_id": "q14",
+    "question": "What HTTP status code is returned when an invalid path is passed to ingestion?",
+    "gold_doc_id": "api_spec",
+    "gold_chunk_ids": ["api_spec_chunk_1"],
+    "gold_answer": "404 Not Found error.",
+    "category": "api"
+  },
+  {
+    "query_id": "q15",
+    "question": "What is the default top_k parameter value for chunk retrieval?",
+    "gold_doc_id": "rag_architecture",
+    "gold_chunk_ids": ["rag_architecture_chunk_4"],
+    "gold_answer": "The default top_k parameter value is 5.",
+    "category": "retrieval"
+  }
+]
